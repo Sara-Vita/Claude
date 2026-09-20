@@ -19,13 +19,19 @@ class SectionHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              titolo,
-              style: TextStyle(fontSize: 24, color: colors.textPrimary),
+            Expanded(
+              child: Text(
+                titolo,
+                style: TextStyle(fontSize: 24, color: colors.textPrimary),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-            if (trailing != null) trailing!,
+            if (trailing != null) ...[
+              const SizedBox(width: 12),
+              trailing!,
+            ],
           ],
         ),
         const SizedBox(height: 10),
