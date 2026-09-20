@@ -12,7 +12,7 @@ enum _Tab { anagrafica, libretto }
 /// dall'anagrafica (dati ad alta frequenza di consultazione — voti, media —
 /// contro dati pressoché statici); qui si traduce in due tab dentro la
 /// stessa schermata invece che due voci separate in sidebar, per non far
-/// crescere la navigazione principale oltre le cinque voci già decise.
+/// crescere la navigazione principale oltre le sei voci già decise.
 class ProfiloScreen extends StatefulWidget {
   const ProfiloScreen({
     super.key,

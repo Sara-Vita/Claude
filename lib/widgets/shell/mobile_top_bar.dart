@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../theme/app_colors.dart';
 
 /// Barra in cima al contenuto, solo mobile: qui torna l'icona di ricerca
-/// (in bottom bar non c'è più posto, ha già le 5 voci piene — vedi
-/// CLAUDE.md) insieme al titolo della sezione corrente.
+/// (in bottom bar non c'è più posto, ha già le 6 voci piene) insieme al
+/// titolo della sezione corrente.
 class MobileTopBar extends StatelessWidget implements PreferredSizeWidget {
   const MobileTopBar({
     super.key,

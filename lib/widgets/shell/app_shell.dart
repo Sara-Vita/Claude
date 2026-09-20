@@ -44,10 +44,9 @@ class AppShell extends StatefulWidget {
 class _AppShellState extends State<AppShell> {
   AppSection _section = AppSection.home;
 
-  /// Sezione a cui torna il pulsante "indietro" quando si è dentro una
-  /// sezione secondaria (ricerca/calendario). Salvata solo al momento in
-  /// cui SI ENTRA in una sezione secondaria, così non si sovrascrive se
-  /// da Ricerca si passa direttamente a Calendario.
+  /// Sezione a cui torna il pulsante "indietro" quando si è dentro Ricerca
+  /// (l'unica sezione secondaria rimasta ora che Calendario è una voce
+  /// fissa). Salvata solo al momento in cui SI ENTRA in Ricerca.
   AppSection? _sezionePrecedente;
 
   /// Preferenza "per breakpoint" descritta in CLAUDE.md
@@ -197,7 +196,9 @@ class _SidebarLayout extends StatelessWidget {
 }
 
 /// Layout mobile: barra in alto (titolo + ricerca) sopra il contenuto,
-/// bottom bar sotto. Niente sidebar, niente anelletti (vedi RingsDivider).
+/// striscia di anelletti orizzontale, bottom bar sotto. Niente sidebar
+/// laterale qui, ma gli anelletti restano — solo ruotati di 90° per
+/// affiancare la navbar orizzontale invece di quella verticale.
 class _MobileLayout extends StatelessWidget {
   const _MobileLayout({
     required this.section,
@@ -224,6 +225,7 @@ class _MobileLayout extends StatelessWidget {
             onBack: onBack,
           ),
           Expanded(child: content),
+          const RingsDivider(direzione: Axis.horizontal, numeroAnelli: 10),
           AppBottomNav(currentSection: section, onSelect: onSelect),
         ],
       ),

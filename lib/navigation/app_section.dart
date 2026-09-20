@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 
 /// Tutte le "schermate" raggiungibili nella shell.
 ///
-/// Le prime cinque sono le voci fisse di navigazione (sidebar/bottom bar),
-/// nell'ordine deciso in CLAUDE.md: Home, Dispense, Studio, Gruppi, Profilo.
-/// [ricerca] e [calendario] sono sezioni "secondarie": si raggiungono da
-/// un'azione dentro il contenuto (icona di ricerca, bottone "vedi
-/// calendario completo" in Home) e non hanno una voce propria in sidebar —
-/// esattamente come descritto nei mockup, dove la ricerca è "un elemento di
-/// primo livello sempre visibile", non una voce di navigazione.
+/// Aggiornamento rispetto alla prima bozza: Calendario è ora una voce fissa
+/// di navigazione (richiesta esplicita), quindi la sidebar/bottom bar mostra
+/// sei voci: Home, Calendario, Dispense, Studio, Gruppi, Profilo.
+/// [ricerca] resta l'unica sezione "secondaria": si raggiunge dall'icona di
+/// ricerca sempre visibile in cima alla sidebar, non da una voce di
+/// navigazione — esattamente come descritto nei mockup ("un elemento di
+/// primo livello sempre visibile", non una voce di navigazione).
 enum AppSection {
   home(icona: Icons.home_outlined, iconaAttiva: Icons.home, etichetta: 'Home'),
+  calendario(
+    icona: Icons.calendar_month_outlined,
+    iconaAttiva: Icons.calendar_month,
+    etichetta: 'Calendario',
+  ),
   dispense(
     icona: Icons.menu_book_outlined,
     iconaAttiva: Icons.menu_book,
@@ -35,11 +40,6 @@ enum AppSection {
     icona: Icons.search,
     iconaAttiva: Icons.search,
     etichetta: 'Ricerca',
-  ),
-  calendario(
-    icona: Icons.calendar_month_outlined,
-    iconaAttiva: Icons.calendar_month,
-    etichetta: 'Calendario',
   );
 
   const AppSection({
@@ -52,10 +52,11 @@ enum AppSection {
   final IconData iconaAttiva;
   final String etichetta;
 
-  /// Le cinque voci mostrate in sidebar/bottom bar, nell'ordine giusto.
-  static const vociPrincipali = [home, dispense, studio, gruppi, profilo];
+  /// Le sei voci mostrate in sidebar/bottom bar, nell'ordine giusto.
+  static const vociPrincipali = [home, calendario, dispense, studio, gruppi, profilo];
 
   /// true per le sezioni raggiunte "di passaggio" (mostrano una freccia
-  /// indietro invece di essere evidenziate in navigazione).
-  bool get isSecondaria => this == ricerca || this == calendario;
+  /// indietro invece di essere evidenziate in navigazione). Con Calendario
+  /// promosso a voce fissa, l'unica rimasta è Ricerca.
+  bool get isSecondaria => this == ricerca;
 }
