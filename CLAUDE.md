@@ -10,16 +10,18 @@ Questo file riassume le decisioni di design/architettura prese finora. Leggilo p
 - Font: serif (Georgia / Times New Roman in prototipo, valutare un serif con licenza commerciale in produzione).
 - Palette chiara: navbar `#C1502E` (terracotta), sfondo `#F2EBDD` (beige), testo `#4A3323` (marrone), accento `#7C8A4E` (oliva).
 - Dark mode scelta: **grafite neutro** — sfondo `#1C1B19`, card `#262523`, testo `#E8E4DC`, accento terracotta `#E2643A`, accento oliva `#8FA05C`, bordo `#35332F`.
-- Dettaglio distintivo: colonna di "anelletti" (cerchi vuoti, decorativi, `aria-hidden`) tra sidebar e contenuto, a simulare la rilegatura di un quaderno. Solo desktop/tablet largo, nascosto sotto un certo breakpoint mobile.
+- Dettaglio distintivo: "anelletti" (cerchi vuoti, decorativi, `aria-hidden`) accanto alla navbar, a simulare la rilegatura di un quaderno. Presenti su **tutti e tre** i breakpoint: colonna verticale tra sidebar e contenuto su desktop/tablet, striscia orizzontale accanto alla bottom bar su mobile (non nascosti, solo ruotati per seguire l'orientamento della navbar).
 - Sistema temi futuro (piano Pro): catalogo `Temi` separato (non annidato nell'utente), ogni tema ha varianti chiaro/scuro, flag `richiedePro`, e campi opzionali `disponibileDal`/`disponibileAl` per temi stagionali a tempo.
 
 ## Architettura informativa (navbar)
-Voci: **Home, Dispense, Studio, Gruppi, Profilo**.
+Voci: **Home, Calendario, Dispense, Studio, Gruppi, Profilo**.
 - Barra di ricerca pubblica ("cerca dispense") **fissa in cima alla sidebar**, sopra i tab — non è una voce di navigazione ma un elemento di primo livello sempre visibile.
+- **Calendario** è una voce di navigazione fissa (non più raggiunta solo da un bottone in Home): mostra i Calendari multipli dell'utente (Personale, Lezioni, Gruppo X...) e la griglia settimanale degli eventi.
 - **Libretto** trattato come sezione distinta dal Profilo anagrafico (dati ad alta frequenza di consultazione vs dati statici); tab/dropdown separato dal Profilo.
 - **Studio**: hub di creazione (note, registrazioni, immagini generate, upload) e generazione flashcard (manuale gratis / AI con badge Pro). I mazzi generati confluiscono qui, non dentro le singole materie.
 - **Dispense** (ex "Materiale"): elenco materie con bottone "Aggiungi materia" sempre visibile, card per materia con bordo colorato = `materia.colore`, conteggio contenuti (note/registrazioni/flashcard).
 - **Gruppi**: storage/calendario condiviso, non necessariamente chat (funzionalità messaggistica ancora da decidere).
+- **Ricerca** resta l'unica sezione raggiunta "di passaggio" (icona sempre visibile in sidebar), non una voce fissa di navigazione.
 
 ## Navbar responsive (shrinkable)
 Stato salvato **per breakpoint**, non globale:

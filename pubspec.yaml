@@ -1,0 +1,29 @@
+name: quaderno_app
+description: >
+  Quaderno — app di note e organizzazione universitaria.
+  Interfaccia responsive unica per web, tablet e mobile (Flutter).
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  # Georgia (usato nei mockup HTML) non è disponibile su Android/Linux/Web di default.
+  # Lora è un serif gratuito e con licenza aperta (SIL Open Font License) dallo "spirito"
+  # molto simile a Georgia: stessa famiglia "old-style serif da lettura schermo".
+  # google_fonts scarica e mette in cache il font al primo utilizzo (o lo include in bundle
+  # se lo si "vendorizza" più avanti) — nessuna gestione manuale di file .ttf per ora.
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
