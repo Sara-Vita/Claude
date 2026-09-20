@@ -2,10 +2,12 @@
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
+.metadata
 .packages
 .pub-cache/
 .pub/
 build/
+pubspec.lock
 *.g.dart
 
 # Cartelle piattaforma generate da `flutter create .`
