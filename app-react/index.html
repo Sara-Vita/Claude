@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quaderno</title>
+    <!--
+      Lora sostituisce Georgia (usato nei mockup .html) per lo stesso motivo
+      documentato in pubspec.yaml lato Flutter: Georgia non è garantito fuori
+      da macOS/Windows, Lora è un serif "old-style da lettura schermo" con
+      licenza libera (SIL OFL) molto simile nello spirito. Il fallback
+      Georgia/Times New Roman resta comunque in coda nello stack di
+      app-react/src/theme/global.css.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

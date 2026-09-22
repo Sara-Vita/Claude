@@ -1,0 +1,61 @@
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--q-accent-terracotta);
+  color: var(--q-navbar-text-active);
+  border: none;
+  border-radius: 4px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Più colonne quando c'è spazio: 1 sotto i 420px di contenuto (tipico
+   mobile in verticale), poi 2, poi 3 oltre i 900px — stesse soglie della
+   griglia in dispense_screen.dart, qui espresse come CSS Grid auto-fill
+   invece che calcolate a mano in JS: il browser sceglie da solo quante
+   colonne stanno nella larghezza disponibile. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid var(--q-border);
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--q-text-primary);
+}
+
+.cardMeta {
+  font-size: 11px;
+  color: var(--q-text-muted);
+  margin-bottom: 6px;
+}
+
+.counts {
+  display: flex;
+  gap: 10px;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: var(--q-text-muted);
+}

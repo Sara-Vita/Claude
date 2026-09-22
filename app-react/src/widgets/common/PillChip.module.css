@@ -1,0 +1,15 @@
+.chip {
+  border-radius: 12px;
+  border: 1px solid var(--q-border);
+  background: transparent;
+  color: var(--q-text-muted);
+  padding: 3px 10px;
+  font-size: 10px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.selected {
+  border-color: var(--q-accent-olive);
+  color: var(--q-accent-olive);
+}

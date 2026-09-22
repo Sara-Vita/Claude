@@ -1,0 +1,57 @@
+.createButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--q-accent-terracotta);
+  color: var(--q-navbar-text-active);
+  border: none;
+  border-radius: 4px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.card {
+  border: 1px solid var(--q-border);
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--q-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 10px;
+  color: var(--q-accent-olive);
+  border: 1px solid var(--q-accent-olive);
+  border-radius: 10px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.fileCount {
+  font-size: 11px;
+  color: var(--q-text-muted);
+}

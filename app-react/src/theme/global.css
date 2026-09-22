@@ -1,0 +1,65 @@
+/*
+ * Valori di default delle variabili di tema: ThemeContext li sovrascrive a
+ * runtime (vedi useEffect in ThemeContext.tsx), ma averli già qui evita un
+ * frame "senza stile" al primissimo render, prima che l'effect sia girato.
+ * Sono gli stessi esadecimali di theme/colors.ts (tema chiaro) — se cambia
+ * la palette lì, va aggiornata anche qui.
+ */
+:root {
+  --q-navbar-background: #c1502e;
+  --q-navbar-search-background: #a8421f;
+  --q-navbar-text-active: #f2ebdd;
+  --q-navbar-text-inactive: #eac9b8;
+  --q-navbar-active-indicator: #f2ebdd;
+  --q-page-background: #f2ebdd;
+  --q-surface: #fffdf8;
+  --q-text-primary: #4a3323;
+  --q-text-muted: #8a7358;
+  --q-border: #d9c9ae;
+  --q-accent-olive: #7c8a4e;
+  --q-accent-terracotta: #c1502e;
+  --q-ring-fill: #e4d7be;
+  --q-ring-border: #c9b896;
+  --q-avatar-0: #e4d7be;
+  --q-avatar-1: #dce3c4;
+  --q-avatar-2: #f0dcc8;
+
+  /* Soglie di layout — stesso valore di lib/layout/breakpoints.dart,
+     duplicato qui solo per i pochi punti dove un puro media query CSS
+     basta (in genere si usa l'hook useDeviceType, vedi layout/breakpoints.ts). */
+  --q-breakpoint-tablet: 700px;
+  --q-breakpoint-desktop: 1100px;
+
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* Georgia è quella dei mockup .html; Lora (caricato in index.html) è il
+     sostituto multipiattaforma scelto — stessa decisione documentata in
+     pubspec.yaml lato Flutter. */
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  background: var(--q-page-background);
+  color: var(--q-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

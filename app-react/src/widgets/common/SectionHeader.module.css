@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.title {
+  flex: 1;
+  font-size: 24px;
+  color: var(--q-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.rule {
+  width: 60px;
+  height: 1px;
+  background: var(--q-accent-olive);
+  border: none;
+  margin: 0 0 20px;
+}
+
+.label {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--q-accent-olive);
+  margin: 0 0 8px;
+}

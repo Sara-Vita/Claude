@@ -1,0 +1,131 @@
+.sidebar {
+  height: 100%;
+  flex-shrink: 0;
+  background: var(--q-navbar-background);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  /* La larghezza cambia con .expanded/.compact, ma la transizione è sulla
+     larghezza stessa: niente JS per l'animazione, solo CSS. */
+  transition: width 180ms ease;
+  overflow: hidden;
+}
+
+.expanded {
+  width: 190px;
+  align-items: stretch;
+}
+
+.compact {
+  width: 56px;
+  align-items: center;
+}
+
+.header {
+  padding: 0 18px 18px;
+  color: var(--q-navbar-text-active);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.headerCompact {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--q-navbar-search-background);
+  color: var(--q-navbar-text-active);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.searchExpanded {
+  margin: 0 16px 20px;
+  background: var(--q-navbar-search-background);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  color: var(--q-navbar-text-inactive);
+  font-size: 12px;
+  text-align: left;
+}
+
+.searchExpanded span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.searchCompact {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--q-navbar-text-inactive);
+  padding: 6px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-left: 3px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  padding: 9px 15px;
+  color: var(--q-navbar-text-inactive);
+  font-size: 13px;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+}
+
+.navItemCompact {
+  padding: 8px;
+  margin: 3px 0;
+  justify-content: center;
+  width: auto;
+}
+
+.navItemActive {
+  color: var(--q-navbar-text-active);
+  border-left-color: var(--q-navbar-active-indicator);
+}
+
+.navItem:hover:not(.navItemActive) {
+  color: var(--q-navbar-text-active);
+}
+
+.toggle {
+  align-self: flex-end;
+  margin: 8px 15px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--q-navbar-text-inactive);
+  display: flex;
+  padding: 6px;
+}
+
+.toggleCompact {
+  align-self: center;
+  margin: 8px 0 0;
+}

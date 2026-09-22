@@ -1,0 +1,31 @@
+.page {
+  height: 100vh;
+  background: var(--q-page-background);
+}
+
+/* --- Layout desktop/tablet: Sidebar | Anelletti | Contenuto --- */
+.sidebarLayout {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  position: relative; /* ancora per il pannello di ricerca assoluto */
+}
+
+.content {
+  flex: 1;
+  min-width: 0; /* evita che testo/grid lunghi sfondino il flex item */
+  overflow-y: auto;
+}
+
+/* --- Layout mobile: TopBar sopra, BottomNav sotto, anelletti fra i due --- */
+.mobileLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobileContent {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}

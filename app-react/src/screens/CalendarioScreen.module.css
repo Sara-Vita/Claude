@@ -1,0 +1,94 @@
+.page {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Sotto una certa larghezza del contenuto (non della finestra: su desktop
+   con sidebar espansa il contenuto è già più stretto della finestra intera)
+   la colonna dei calendari va sopra la griglia invece che affiancata,
+   altrimenti la griglia non avrebbe più spazio per essere leggibile — stessa
+   soglia di CalendarioScreen in Flutter (640px), qui via container query
+   sul contenitore .page stesso. */
+.pageNarrow {
+  flex-direction: column;
+}
+
+.listaCalendari {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.listaTitolo {
+  font-size: 16px;
+  color: var(--q-text-primary);
+  margin: 0 0 14px;
+}
+
+.calendarioRiga {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 12px;
+  color: var(--q-text-primary);
+}
+
+.pallino {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.nuovoCalendario {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--q-accent-olive);
+  font-size: 12px;
+  font-family: inherit;
+  padding: 0;
+}
+
+.griglia {
+  flex: 1;
+  min-width: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.griglia th {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--q-text-muted);
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.griglia td {
+  vertical-align: top;
+  padding: 2px;
+}
+
+.giornoCella {
+  font-size: 10px;
+  color: var(--q-text-muted);
+  padding-top: 8px !important;
+  white-space: nowrap;
+}
+
+.eventoChip {
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 9px;
+  color: var(--q-navbar-text-active);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,14 @@
+/*
+ * Padding di pagina condiviso dalla maggior parte delle schermate (Home,
+ * Dispense, Studio, Gruppi, Profilo) — stesso valore di
+ * `EdgeInsets.symmetric(horizontal: 32, vertical: 28)` ripetuto in ognuna
+ * delle screen Flutter corrispondenti. Un file condiviso invece di
+ * duplicare la regola in ogni .module.css di screens/: se cambia il
+ * padding "standard" di pagina, cambia qui una volta sola. Le schermate con
+ * un padding diverso (Calendario, Ricerca) non lo importano e definiscono
+ * il proprio nel loro .module.css.
+ */
+.page {
+  padding: 28px 32px;
+  max-width: 960px;
+}

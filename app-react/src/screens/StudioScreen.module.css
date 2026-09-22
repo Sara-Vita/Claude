@@ -1,0 +1,139 @@
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.actionCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--q-border);
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--q-text-primary);
+  font-family: inherit;
+  text-align: left;
+}
+
+.actionCard:hover {
+  border-color: var(--q-accent-olive);
+}
+
+.mazzoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--q-border);
+}
+
+.mazzoTitolo {
+  flex: 1;
+  font-size: 14px;
+  color: var(--q-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mazzoAiIcon {
+  color: var(--q-accent-terracotta);
+  display: flex;
+}
+
+.mazzoCarte {
+  font-size: 12px;
+  color: var(--q-text-muted);
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.manualButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: var(--q-accent-olive);
+  color: var(--q-navbar-text-active);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.aiButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--q-accent-terracotta);
+  background: transparent;
+  color: var(--q-accent-terracotta);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.proBadge {
+  background: var(--q-accent-terracotta);
+  color: var(--q-navbar-text-active);
+  font-size: 10px;
+  padding: 1px 6px;
+}
+
+/* --- Bottom sheet scelta stile immagine --- */
+.sheetBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 20;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 480px;
+  background: var(--q-surface);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 20px;
+  padding-bottom: max(20px, env(safe-area-inset-bottom, 0px));
+}
+
+.sheetTitle {
+  font-size: 16px;
+  color: var(--q-text-primary);
+  margin: 0 0 14px;
+}
+
+.sheetOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px 0;
+  color: var(--q-text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  text-align: left;
+}
+
+.sheetOption svg {
+  color: var(--q-accent-olive);
+}
